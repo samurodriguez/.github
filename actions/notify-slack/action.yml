@@ -16,4 +16,4 @@ outputs:
     description: The date with message sent
 runs:
   using: node20
-  main: main.js
+  main: dist/main.js
