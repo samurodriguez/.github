@@ -1,5 +1,5 @@
-// import * as core from "@actions/core";
-import fs from "fs";
+import * as core from "@actions/core";
+// import fs from "fs";
 
 const message = process.env.INPUT_MESSAGE;
 const slackWebhookUrl = process.env.INPUT_SLACK_WEBHOOK_URL;
@@ -28,8 +28,8 @@ const main = async () => {
 
   const sentMessage = `${new Date().toISOString()} - ${message}`;
 
-  //   core.setOutput("sent_message", sentMessage);
-  fs.appendFileSync(process.env.GITHUB_OUTPUT, `sent_message=${sentMessage}`);
+  core.setOutput("sent_message", sentMessage);
+  //   fs.appendFileSync(process.env.GITHUB_OUTPUT, `sent_message=${sentMessage}`);
 };
 
 main();
