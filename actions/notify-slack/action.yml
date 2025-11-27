@@ -4,6 +4,10 @@ inputs:
   message:
     description: the message to send to slack
     required: true
+  type:
+    description: type of the message (good, warning, danger)
+    required: false
+    default: good
   webhook-url:
     description: slack webhook url
     required: true

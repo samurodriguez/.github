@@ -27428,6 +27428,7 @@ var __webpack_exports__ = {};
 
 
 const message = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("message", { required: true });
+const messageType = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("type", { required: false });
 const webhookUrl = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("webhook-url", { required: true });
 
 // const message = process.env.INPUT_MESSAGE
@@ -27436,7 +27437,9 @@ const webhookUrl = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("webhook-
   const res = await fetch(webhookUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ text: message }),
+    body: JSON.stringify({
+      attachments: [{ text: message, color: messageType }],
+    }),
   });
 
   if (!res.ok) {
