@@ -1,0 +1,15 @@
+name: notify-slack
+description: sends a message to slack
+inputs:
+  message:
+    description: the message to send to slack
+    required: true
+  webhook-url:
+    description: slack webhook url
+    required: true
+outputs:
+  message-sent-at:
+    description: date which message was sent
+runs:
+  using: "node20"
+  main: dist/index.js
