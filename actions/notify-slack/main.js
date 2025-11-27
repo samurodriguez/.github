@@ -20,6 +20,7 @@ const webhookUrl = core.getInput("webhook-url", { required: true });
     process.exit(1);
   }
 
+  core.setOutput("message-sent-at", new Date().toISOString());
   console.log("Message sent succesfully ✅");
   process.exit(0);
 })();

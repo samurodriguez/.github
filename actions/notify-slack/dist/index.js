@@ -27447,6 +27447,7 @@ const webhookUrl = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("webhook-
     process.exit(1);
   }
 
+  _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput("message-sent-at", new Date().toISOString());
   console.log("Message sent succesfully ✅");
   process.exit(0);
 })();
