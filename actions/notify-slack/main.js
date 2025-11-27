@@ -9,7 +9,7 @@ const webhookUrl = core.getInput("webhook-url", { required: true });
   const res = await fetch(webhookUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ test: message }),
+    body: JSON.stringify({ text: message }),
   });
 
   if (!res.ok) {
