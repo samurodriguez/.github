@@ -27436,7 +27436,7 @@ const webhookUrl = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("webhook-
   const res = await fetch(webhookUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ test: message }),
+    body: JSON.stringify({ text: message }),
   });
 
   if (!res.ok) {
